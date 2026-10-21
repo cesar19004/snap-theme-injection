@@ -50,3 +50,10 @@ Ensure the paths provided in your `.env` file are correct and accessible by your
 bash main.bash
 ```
 
+### 3. Snap connection
+
+Running `main.bash` handles snap connections, but after installing a new snap or refreshing an existing one, you need to reconnect it manually by running:
+
+```bash
+sudo bash connect_snaps.bash
+```

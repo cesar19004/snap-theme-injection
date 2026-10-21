@@ -73,8 +73,14 @@ done
 echo "Packing updated snap... "
 mksquashfs updated-common-themes updated-common-themes-snap -noappend -comp xz
 
+echo "Removing old snap if present"
+sudo snap remove --purge gtk-common-themes
+
 echo "Installing updated snap... "
 sudo snap install ./updated-common-themes-snap --dangerous
+
+echo "Connecting updated snap... "
+sudo bash connect_snaps.bash
 
 echo -n "Cleaning files...  "
 rm -f ./gtk-common-themes.snap ./gtk-common-themes.assert ./updated-common-themes-snap 2>/dev/null
